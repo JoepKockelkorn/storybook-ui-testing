@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@storybook-ui-testing/shared/ui/button": [
+        "libs/shared/ui/button/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
