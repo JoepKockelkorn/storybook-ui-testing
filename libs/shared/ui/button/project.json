@@ -48,6 +48,13 @@
           "quiet": true
         }
       }
+    },
+    "test-sb": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "concurrently -k -n sb,test -s command-test \"nx run shared-ui-button:storybook\" \"wait-on tcp:4400 && test-storybook --url http://localhost:4400 -c libs/shared/ui/button/.storybook\""
+      }
     }
   },
   "tags": []
