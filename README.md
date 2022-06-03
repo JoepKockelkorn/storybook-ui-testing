@@ -1,5 +1,9 @@
 # Interaction testing Storybook nx integration
 
+## How to run
+
+Run `npm run nx run shared-ui-button:test-sb`
+
 ## Todo
 
 - [x] add storybook plugin
