@@ -1,5 +1,11 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
+export const colors = [
+  'rgb(30, 113, 69)',
+  'rgb(238, 17, 17)',
+  'rgb(45, 137, 239)',
+];
+
 @Component({
   selector: 'storybook-ui-testing-fancy-button',
   template: `<button
@@ -22,7 +28,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FancyButtonComponent {
-  readonly colors = ['#1e7145', '#ee1111', '#2d89ef'];
+  readonly colors = colors;
   colorIndex = 0;
 
   onClick(): void {
