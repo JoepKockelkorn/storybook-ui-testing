@@ -13,4 +13,4 @@ Run `npm run nx run shared-ui-button:test-sb`
 - [x] install new 6.5 goodies
 - [x] look for ways to integrate [interaction testing](https://storybook.js.org/docs/angular/writing-tests/interaction-testing)
 - [x] look for ways to integrate [the test runner](https://storybook.js.org/docs/angular/writing-tests/test-runner)
-- [ ] optional: run the test runner in CI as well
+- [x] optional: run the test runner in CI as well
