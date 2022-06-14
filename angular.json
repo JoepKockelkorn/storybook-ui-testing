@@ -4,6 +4,7 @@
   "projects": {
     "app": "apps/app",
     "app-e2e": "apps/app-e2e",
-    "shared-ui-button": "libs/shared/ui/button"
+    "shared-ui-button": "libs/shared/ui/button",
+    "shared-ui-storybook": "libs/shared/ui/storybook"
   }
 }
