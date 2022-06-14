@@ -1,0 +1,21 @@
+name: Chromatic
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  chromatic-deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: volta-cli/action@fdf4cf319494429a105efaa71d0e5ec67f338c6e
+        with:
+          node-version: '16.13.2'
+      - name: Install dependencies
+        run: npm ci
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
