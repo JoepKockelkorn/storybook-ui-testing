@@ -1,4 +1,5 @@
 {
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/shared/ui/button/src",
   "prefix": "storybook-ui-testing",
@@ -53,7 +54,14 @@
       "executor": "nx:run-commands",
       "outputs": [],
       "options": {
-        "command": "concurrently -k -n sb,test -s command-test \"nx run shared-ui-button:storybook\" \"wait-on tcp:4400 && test-storybook --url http://localhost:4400 -c libs/shared/ui/button/.storybook\""
+        "command": "test-storybook --url http://localhost:4400 -c libs/shared/ui/button/.storybook"
+      }
+    },
+    "e2e": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "concurrently -k -n sb,test -s command-test \"nx run shared-ui-button:storybook\" \"wait-on tcp:4400 && nx run shared-ui-button:test-sb\""
       }
     }
   },
