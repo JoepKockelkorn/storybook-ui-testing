@@ -17,7 +17,8 @@
     "paths": {
       "@storybook-ui-testing/shared/ui/button": [
         "libs/shared/ui/button/src/index.ts"
-      ]
+      ],
+      "@storybook-ui-testing/shared/ui/tab": ["libs/shared/ui/tab/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

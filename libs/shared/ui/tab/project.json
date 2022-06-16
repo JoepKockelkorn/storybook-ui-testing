@@ -1,0 +1,66 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/shared/ui/tab/src",
+  "prefix": "storybook-ui-testing",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/tab"],
+      "options": {
+        "jestConfig": "libs/shared/ui/tab/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/ui/tab/**/*.ts",
+          "libs/shared/ui/tab/**/*.html"
+        ]
+      }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4401,
+        "configDir": "libs/shared/ui/tab/.storybook",
+        "browserTarget": "shared-ui-tab:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputDir": "dist/storybook/shared-ui-tab",
+        "configDir": "libs/shared/ui/tab/.storybook",
+        "browserTarget": "shared-ui-tab:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook --url http://localhost:4401 -c libs/shared/ui/tab/.storybook"
+      }
+    },
+    "e2e": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "concurrently -k -n storybook,test -s command-test \"nx run shared-ui-tab:storybook\" \"wait-on tcp:4401 && nx run shared-ui-tab:test-storybook\""
+      }
+    }
+  },
+  "tags": []
+}
