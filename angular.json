@@ -5,6 +5,7 @@
     "app": "apps/app",
     "app-e2e": "apps/app-e2e",
     "shared-ui-button": "libs/shared/ui/button",
-    "shared-ui-storybook": "libs/shared/ui/storybook"
+    "shared-ui-storybook": "libs/shared/ui/storybook",
+    "shared-ui-tab": "libs/shared/ui/tab"
   }
 }
